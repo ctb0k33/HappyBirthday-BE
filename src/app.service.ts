@@ -11,13 +11,12 @@ export class AppService {
 
   async sendWishes(wishes: any) {
     const provider = new ethers.providers.JsonRpcProvider(
-      'https://bsc-testnet-rpc.publicnode.com',
+      'https://bsc-rpc.publicnode.com',
     );
-    console.log(process.env.PRIVATE_KEY);
     const privateKey = process.env.PRIVATE_KEY;
     const wallet = new Wallet(privateKey, provider);
     const birthdayContract = new ethers.Contract(
-      '0x2e16a8aD6A73ece9Ee5c6307E34fa55074808F99',
+      '0x7389EFe05997F4999Edb48B8cd9EA0C3B8E88590',
       ABI,
       wallet,
     );
